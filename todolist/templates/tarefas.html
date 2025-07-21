@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Minhas Tarefas</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Lista de Tarefas</h2>
+
+    {% if tarefas %}
+        <ul>
+            {% for t in tarefas %}
+                <li>
+                    <strong>{{ t[1] }}: <br><br> </strong> {{ t[2] }}<br><br>
+                    <strong>Data de criação:</strong> {{ t[3] }} - <strong>Data de Conclusão:</strong> {{ t[4] }}
+                    <br><strong>Status:</strong> {{ t[5] }} - 
+                    <strong>Categoria:</strong> {{ t[6] }}<br>
+                    <br>
+                    <a href="/excluir/{{ t[0] }}" onclick="return confirm('Tem certeza que deseja excluir esta tarefa?')">
+                        🗑️ Excluir
+                    </a>
+                    <a href="/editar/{{ t[0] }}"> 
+                     - Editar
+                    </a>
+                    <a href="/concluir/{{ t[0] }}" method="POST"> - Concluir  </a>
+                </li>
+                <hr>    
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhuma tarefa encontrada.</p>
+    {% endif %}
+
+    <a href="/criar">Criar nova tarefa</a>
+    <br>
+    <br>
+<a href="/logout">Sair</a>
+<br><br>
+<form method="GET" action="/tarefas">
+  <input type="text" name="busca" placeholder="Buscar título ou descrição">
+
+  <select name="status">
+    <option value="">Todos os status</option>
+    <option value="pendente">Pendente</option>
+    <option value="concluida">Concluída</option>
+  </select>
+
+  <select name="categoria_id">
+    <option value="">Todas as categorias</option>
+    {% for categoria in categorias %}
+      <option value="{{ categoria[0] }}">{{ categoria[1] }}</option>
+    {% endfor %}
+  </select>
+
+  <input type="date" name="data_criacao" placeholder="De (data criação)">
+  <input type="date" name="data_conclusao" placeholder="Até (data conclusão)">
+
+  <button type="submit">Filtrar</button>
+</form>
+</ul>
+</body>
+</html>
+
+</body>
+</html>

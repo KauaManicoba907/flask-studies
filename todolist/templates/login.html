@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - To-Do-List</title>
+</head>
+    <form method="post">
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <label>Senha:</label><br>
+        <input type="password" name="senha" required><br><br>
+
+        <input type="submit" value="Entrar">
+    </form>
+
+    <p>Não tem conta? <a href="/cadastro">Cadastre-se</a></p>
+</body>
+</html>
+
+{% if erro %}
+  <p style="color: red;">{{ erro }}</p>
+{% endif %}
+</body>
+</html>

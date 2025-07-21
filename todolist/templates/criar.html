@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de tarefas</title>
+</head>
+<body>
+<form method="POST">
+  <label>Título:</label>
+  <input type="text" name="titulo" required><br>
+
+  <label>Descrição:</label>
+  <textarea name="descricao"></textarea><br>
+
+  <label>Data de Criação:</label>
+  <input type="date" name="data_criacao" required><br>
+
+  <label>Data de Conclusão:</label>
+  <input type="date" name="data_conclusao"><br>
+
+  <label>Status:</label>
+  <select name="status" required>
+    <option value="pendente">Pendente</option>
+    <option value="concluida">Concluída</option>
+  </select><br>
+
+  <label>Categoria:</label>
+  <select name="categoria_id" required>
+    {% for categoria in categorias %}
+      <option value="{{ categoria[0] }}">{{ categoria[1] }}</option>
+    {% endfor %}
+  </select><br>
+
+  <button type="submit">Criar Tarefa</button>
+    <a href="/tarefas">Voltar para lista de tarefas</a>
+</form>
+</form>
+</body>
+</html>
