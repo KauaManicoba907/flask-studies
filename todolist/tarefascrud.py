@@ -6,6 +6,7 @@ from sqlite3 import IntegrityError
 
 @app.route("/criar", methods=["GET", "POST"])
 def criacao_de_tarefas():
+
     if "usuario_id" not in session:
         return redirect("/login")
 
@@ -27,6 +28,8 @@ def criacao_de_tarefas():
         """, (titulo, descricao, data_criacao, data_conclusao, status, categoria_id, usuario_id))
         con.commit()
         con.close()
+
+        return render_template("criar.html", mensagem="Tarefa criada com sucesso!")
 
 
     con = sqlite3.connect("todolist.db")

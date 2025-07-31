@@ -9,7 +9,9 @@ app = app
 
 @app.route("/")
 def homepage():
-    print(session)
+    if "usuario_id" not in session:
+        return redirect("/login")
+
     return render_template("homepage.html")
 
 @app.route("/login", methods=["GET", "POST"])
@@ -23,7 +25,7 @@ def login_de_usuarios():
         con = sqlite3.connect("todolist.db")
         cur = con.cursor()
 
-        cur.execute("SELECT id AND username FROM usuarios WHERE email = ? AND senha = ?",(email, senha))
+        cur.execute("SELECT id, username FROM usuarios WHERE email = ? AND senha = ?",(email, senha))
         user = cur.fetchone()
         con.close()
         if user:

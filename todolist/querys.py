@@ -40,18 +40,8 @@ CREATE TABLE IF NOT EXISTS tarefas (
 )
 """)
 
-cur.execute(
-    "INSERT INTO categorias (nome, descricao) VALUES (?, ?)",
-    [
-        ("Trabalho", "Tarefas relacionadas ao trabalho"),
-        ("Estudos", "Tarefas relacionadas aos estudos"),
-        ("Pessoal", "Tarefas pessoais"),
-        ("Urgente", "Tarefas que precisam ser feitas com prioridade")
-        ("Saúde", "Tarefas relacionadas à saúde e bem-estar"),  
-        ("Lazer", "Tarefas relacionadas ao lazer e entretenimento"),
-        ("Financeiro", "Tarefas relacionadas a finanças pessoais"),
-        ("Projetos", "Tarefas relacionadas a projetos específicos"      )
-    ]
-)
+
+
 con.commit()
 con.close()
+

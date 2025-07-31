@@ -4,31 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro - To-Do-List</title>
+    <link rel="stylesheet" href="/style/cadastro.css">
 </head>
-<body>
-    <center><h3>To-do-List</h3></center>
+<body><header>
+    <h3>Cadastro de usuarios para a lista de tarefas!</h3><br>
+    <h4>Aqui você pode finalmente se cadastrar e criar suas próprias tarefas!</h4>
+</header>
     <br><br>
     <form method="POST">
- <center><input name="nome_completo" placeholder="Nome completo" required></center>
+<input name="nome_completo" placeholder="Nome completo" required>
   <br><br>
-  <center><input name="username" placeholder="Usuário" required></center>
+<input name="username" placeholder="Usuário" required>
   <br><br>
-  <center><input type="email" name="email" placeholder="Email" required></center>
+<input type="email" name="email" placeholder="Email" required>
   <br><br>
-  <center><input type="password" name="senha" placeholder="Senha" required></center>
+  <input type="password" name="senha" placeholder="Senha" required>
   <br><br>
-  <center><input type="password" name="confirmar_senha" placeholder="Confirmar Senha" required></center>
+<input type="password" name="confirmar_senha" placeholder="Confirmar Senha" required>
   <br><br>
-  <center><input name="telefone" placeholder="Telefone" required></center>
+<input name="telefone" placeholder="Telefone" required>
   <br><br>
-  <center>Data de nascimento <br><input type="date" name="data_nascimento" required></center>
+  Data de nascimento <br><br><input type="date" name="data_nascimento" required>
   <br><br>
-<center>Como você conheceu a lista de tarefas? <br><center><input name="como_conheceu" textarea="Como nos conheceu?" required><br></center>
-  <center><button type="submit">Cadastrar</button></center>
+Como você conheceu a lista de tarefas? <br><br><input name="como_conheceu" textarea="Como nos conheceu?" required><br>
+<button type="submit">Cadastrar</button>
 </form>
+<footer>
+<button href="/login">Já tem uma conta? Faça login!</button>
     <br><br>
-    <center><a href="/login">Já tem uma conta? Faça login</a></center>
-    <br><br>
-    <center><a href="/login">Voltar para a página inicial</a></center>
+<button href="/">Página inicial</button>
+</footer>
 </body>
 </html>
